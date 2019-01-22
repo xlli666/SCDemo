@@ -1,0 +1,16 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: sms-service
+  rabbitmq:
+    host: 192.168.43.141
+    username: democloud
+    password: demo376DC
+    virtual-host: /democloud
+dc:
+  sms:
+    accessKeyId: 123 # 你自己的accessKeyId
+    accessKeySecret: 123 # 你自己的AccessKeySecret
+    signName: 测试 # 签名名称
+    verifyCodeTemplate: SMS_1233 # 模板名称
