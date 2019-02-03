@@ -9,15 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cloud.demo.common</groupId>
-    <artifactId>dc-common</artifactId>
+    <groupId>com.cloud.demo.service</groupId>
+    <artifactId>dc-auth</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>dc-auth-service</module>
+        <module>dc-auth-common</module>
+    </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-core</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>

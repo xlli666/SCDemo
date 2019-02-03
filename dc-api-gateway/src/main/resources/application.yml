@@ -19,6 +19,7 @@ zuul:
     item-service: /item/** # （简写: zuul.routes.<serviceId>=<path>）将商品微服务映射到/item/**
     search-service: /search/**
     user-service: /user/**
+    auth-service: /auth/**
   ignored-services:
     - upload-service
 ribbon:
