@@ -37,3 +37,15 @@ hystrix:
         isolation:
           thread:
             timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
+dc:
+  jwt:
+    pubKeyPath: D:/jwt/rsa/rsa.pub # 公钥地址
+    cookieName: DC_TOKEN # cookie名称
+  filter:
+      allowPaths:
+        - /api/auth
+        - /api/search
+        - /api/user/register
+        - /api/user/check
+        - /api/user/code
+        - /api/item

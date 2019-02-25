@@ -33,6 +33,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <!-- 登录拦截 -->
+        <dependency>
+            <groupId>com.cloud.demo.common</groupId>
+            <artifactId>dc-common</artifactId>
+            <version>${dc.latest.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cloud.demo.service</groupId>
+            <artifactId>dc-auth-common</artifactId>
+            <version>${dc.latest.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
