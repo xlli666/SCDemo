@@ -3,6 +3,20 @@ server:
 spring:
   application:
     name: user-service
+  redis:
+    host: 192.168.43.141
+  rabbitmq:
+    host: 192.168.43.141
+    username: democloud
+    password: demo376DC
+    virtual-host: /democloud
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 210000ms
+        multiplier: 2
+    publisher-confirms: true
   datasource:
       name: demo_test
       type: com.alibaba.druid.pool.DruidDataSource
@@ -42,3 +56,6 @@ eureka:
     prefer-ip-address: true
     ip-address: 127.0.0.1
     instance-id: ${spring.application.name}:${server.port}
+logging:
+  level:
+    com.cloud.demo.user.service.dao: DEBUG
