@@ -4,14 +4,14 @@ import com.cloud.demo.auth.util.RsaUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.io.File;
-import java.security.PrivateKey;
 import java.security.PublicKey;
 
 @Component
+@Primary
 @ConfigurationProperties(prefix = "dc.jwt")
 public class JwtProperties {
 

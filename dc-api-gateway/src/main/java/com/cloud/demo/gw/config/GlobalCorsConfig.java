@@ -13,8 +13,8 @@ public class GlobalCorsConfig {
         //1.添加CORS配置信息
         CorsConfiguration config = new CorsConfiguration();
         //1) 允许的域,不要写*，否则cookie无法使用
-        //config.addAllowedOrigin("http://localhost:8080");
-        //config.addAllowedOrigin("http://127.0.0.1:8080");
+        config.addAllowedOrigin("http://localhost:8080");
+        config.addAllowedOrigin("http://127.0.0.1:8080");
         config.addAllowedOrigin("http://www.democloud.com");
         //2) 是否发送Cookie信息
         config.setAllowCredentials(true);
