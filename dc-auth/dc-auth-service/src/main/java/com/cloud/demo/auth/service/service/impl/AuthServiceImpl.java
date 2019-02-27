@@ -1,6 +1,7 @@
 package com.cloud.demo.auth.service.service.impl;
 
 import com.cloud.demo.auth.entity.UserInfo;
+import com.cloud.demo.auth.service.feign.UserClient;
 import com.cloud.demo.auth.service.property.JwtProperties;
 import com.cloud.demo.auth.service.service.AuthService;
 import com.cloud.demo.auth.util.JwtUtil;
@@ -15,22 +16,31 @@ public class AuthServiceImpl implements AuthService {
 
     private static Logger logger = LoggerFactory.getLogger(AuthServiceImpl.class);
 
+    private final JwtProperties jwtProp;
+
+    private final UserClient userClient;
+
     @Autowired
-    private JwtProperties jwtProp;
+    public AuthServiceImpl(JwtProperties jwtProp, UserClient userClient) {
+        this.jwtProp = jwtProp;
+        this.userClient = userClient;
+    }
 
     @Override
     public String authentication(String username, String password) {
-        // 查询用户
-        User user = new User();
-        user.setId(10L);
-        user.setUsername(username);
-        if (user == null) {
-            logger.info("用户信息不存在，{}", username);
+        try {
+            // 查询用户
+            User user = userClient.queryUser(username, password);
+            if (null == user) {
+                logger.info("用户信息不存在，{}", username);
+                return null;
+            }
+            // 生成token
+            return JwtUtil.generateToken(
+                    new UserInfo(user.getId(), user.getName()),
+                    jwtProp.getPrivateKey(), jwtProp.getExpire());
+        } catch (Exception e) {
             return null;
         }
-        // 生成token
-        return JwtUtil.generateToken(
-                new UserInfo(user.getId(), user.getUsername()),
-                jwtProp.getPrivateKey(), jwtProp.getExpire());
     }
 }

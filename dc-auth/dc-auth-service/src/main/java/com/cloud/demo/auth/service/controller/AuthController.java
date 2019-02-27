@@ -39,7 +39,7 @@ public class AuthController {
         // 登录校验
         String token = authService.authentication(username,password);
         if (StringUtils.isBlank(token)) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(LayUIData.failure(HttpStatus.UNAUTHORIZED.value(),HttpStatus.UNAUTHORIZED.getReasonPhrase()));
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
         // 将token写入cookie,并指定httpOnly为true，防止通过JS获取和修改
         CookieUtils.setCookie(request, response, prop.getCookieName(), token, prop.getCookieMaxAge(),null,true);

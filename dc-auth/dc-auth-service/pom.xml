@@ -27,6 +27,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <!-- 工具使用@ConfigurationProperties报错处理 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>com.cloud.demo.service</groupId>
             <artifactId>dc-auth-common</artifactId>
@@ -40,6 +46,11 @@
         <dependency>
             <groupId>com.cloud.demo.common</groupId>
             <artifactId>dc-common</artifactId>
+            <version>${dc.latest.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cloud.demo.service</groupId>
+            <artifactId>dc-user-interface</artifactId>
             <version>${dc.latest.version}</version>
         </dependency>
     </dependencies>
