@@ -20,15 +20,17 @@
             <artifactId>spring-cloud-netflix-zuul</artifactId>
             <version>2.0.0.RELEASE</version>
         </dependency>-->
+        <!-- Zuul服务网关 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
+        <!-- Eureka注册中心-客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--springBoot提供的微服务检测接口，默认对外提供几个接口：/info-->
+        <!-- springBoot提供的微服务检测接口，默认对外提供几个接口：/info -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -39,12 +41,13 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <!-- 登录拦截 -->
+        <!-- Cookie处理 -->
         <dependency>
             <groupId>com.cloud.demo.common</groupId>
             <artifactId>dc-common</artifactId>
             <version>${dc.latest.version}</version>
         </dependency>
+        <!-- JWT及密钥处理 -->
         <dependency>
             <groupId>com.cloud.demo.service</groupId>
             <artifactId>dc-auth-common</artifactId>

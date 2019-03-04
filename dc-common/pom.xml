@@ -14,6 +14,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
+        <!-- 嵌入式tomcat-处理Cookie -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>

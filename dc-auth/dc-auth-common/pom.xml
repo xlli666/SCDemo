@@ -15,11 +15,13 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
+        <!-- JWT -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>${jjwt.version}</version>
         </dependency>
+        <!-- 时间/日期处理 -->
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>

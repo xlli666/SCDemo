@@ -14,17 +14,12 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
-        <dependency>
-            <groupId>com.cloud.demo.common</groupId>
-            <artifactId>dc-common</artifactId>
-            <version>${dc.latest.version}</version>
-        </dependency>
-        <!--Eureka客户端-->
+        <!-- Eureka注册中心-客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--web启动器-->
+        <!-- web启动器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -33,6 +28,13 @@
         <dependency>
             <groupId>com.github.tobato</groupId>
             <artifactId>fastdfs-client</artifactId>
+            <version>${fastDFS.client.version}</version>
+        </dependency>
+        <!-- 格式化返回的前端数据 -->
+        <dependency>
+            <groupId>com.cloud.demo.common</groupId>
+            <artifactId>dc-common</artifactId>
+            <version>${dc.latest.version}</version>
         </dependency>
     </dependencies>
 

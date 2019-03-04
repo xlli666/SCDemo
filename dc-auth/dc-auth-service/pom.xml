@@ -15,17 +15,20 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
+        <!-- Eureka注册中心-客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+        <!-- Feign接口 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!-- web启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- 工具使用@ConfigurationProperties报错处理 -->
         <dependency>
@@ -33,24 +36,22 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+        <!-- JWT及密钥处理 -->
         <dependency>
             <groupId>com.cloud.demo.service</groupId>
             <artifactId>dc-auth-common</artifactId>
             <version>${dc.latest.version}</version>
         </dependency>
+        <!-- pojo及feign调用api -->
         <dependency>
             <groupId>com.cloud.demo.service</groupId>
             <artifactId>dc-user-interface</artifactId>
             <version>${dc.latest.version}</version>
         </dependency>
+        <!-- Cookie处理 -->
         <dependency>
             <groupId>com.cloud.demo.common</groupId>
             <artifactId>dc-common</artifactId>
-            <version>${dc.latest.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.cloud.demo.service</groupId>
-            <artifactId>dc-user-interface</artifactId>
             <version>${dc.latest.version}</version>
         </dependency>
     </dependencies>

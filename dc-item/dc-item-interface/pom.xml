@@ -15,19 +15,16 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
+        <!-- JPA-数据库表注解 -->
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
             <version>${jpa.version}</version>
         </dependency>
+        <!-- 结合Feign转换@RequestMapping请求 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.cloud.demo.common</groupId>
-            <artifactId>dc-common</artifactId>
-            <version>${dc.latest.version}</version>
         </dependency>
     </dependencies>
 

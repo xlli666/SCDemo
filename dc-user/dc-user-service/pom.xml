@@ -15,12 +15,12 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
-        <!--Eureka客户端-->
+        <!-- Eureka注册中心-客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--web启动器-->
+        <!-- web启动器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -45,27 +45,28 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <!-- Druid数据库连接池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid.version}</version>
         </dependency>
         <!-- Redis启动器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-        <!-- RabbitMQ -->
+        <!-- 消息队列 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-
+        <!-- pojo及api -->
         <dependency>
             <groupId>com.cloud.demo.service</groupId>
             <artifactId>dc-user-interface</artifactId>
             <version>${dc.latest.version}</version>
         </dependency>
+        <!-- 格式化返回的前端数据 -->
         <dependency>
             <groupId>com.cloud.demo.common</groupId>
             <artifactId>dc-common</artifactId>
