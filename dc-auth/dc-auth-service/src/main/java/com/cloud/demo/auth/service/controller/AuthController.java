@@ -43,7 +43,7 @@ public class AuthController {
         }
         // 将token写入cookie,并指定httpOnly为true，防止通过JS获取和修改
         CookieUtils.setCookie(request, response, prop.getCookieName(), token, prop.getCookieMaxAge(),null,true);
-        return ResponseEntity.ok().body(LayUIData.formSubResult("OK"));
+        return ResponseEntity.ok().body(LayUIData.commResult("OK"));
     }
 
     @RequestMapping("verify")

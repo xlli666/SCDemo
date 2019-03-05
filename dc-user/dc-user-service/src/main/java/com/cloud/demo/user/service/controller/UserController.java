@@ -31,7 +31,7 @@ public class UserController {
         if (boo == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-        return ResponseEntity.ok(LayUIData.formSubResult(String.valueOf(boo)));
+        return ResponseEntity.ok(LayUIData.commResult(String.valueOf(boo)));
         //return ResponseEntity.ok(boo);
     }
 
@@ -41,7 +41,7 @@ public class UserController {
         if (boo==null || !boo) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return ResponseEntity.ok(LayUIData.formSubResult(String.valueOf(boo)));
+        return ResponseEntity.ok(LayUIData.commResult(String.valueOf(boo)));
         //return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
@@ -51,7 +51,7 @@ public class UserController {
         if (boo==null || !boo) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-        return ResponseEntity.ok(LayUIData.formSubResult(String.valueOf(boo)));
+        return ResponseEntity.ok(LayUIData.commResult(String.valueOf(boo)));
         //return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

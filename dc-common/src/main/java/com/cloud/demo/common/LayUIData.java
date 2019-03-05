@@ -10,6 +10,13 @@ public class LayUIData extends HashMap<String, Object> {
 
     final private static String MSG = "";
 
+    public static LayUIData commResult(String result) {
+        LayUIData formSubmitResult = new LayUIData();
+        formSubmitResult.put("code",CODE);
+        formSubmitResult.put("msg",MSG);
+        formSubmitResult.put("data",result);
+        return formSubmitResult;
+    }
     public static LayUIData tableResult(Long count, List<?> data) {
         LayUIData tableResult = new LayUIData();
         tableResult.put("code", CODE);
@@ -17,13 +24,6 @@ public class LayUIData extends HashMap<String, Object> {
         tableResult.put("count", count);
         tableResult.put("data", data);
         return tableResult;
-    }
-    public static LayUIData formSubResult(String result) {
-        LayUIData formSubmitResult = new LayUIData();
-        formSubmitResult.put("code",CODE);
-        formSubmitResult.put("msg",MSG);
-        formSubmitResult.put("data",result);
-        return formSubmitResult;
     }
     public static LayUIData uploadResult(String imgUrl) {
         Map<String, String> srcMap = new HashMap<>();
