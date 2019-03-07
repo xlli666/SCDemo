@@ -5,11 +5,11 @@ spring:
     name: dc-registry
 eureka:
   client:
-    fetch-registry: false
-    register-with-eureka: false
-    service-url:
+    fetch-registry: false # 是否注册服务信息到EurekaServer，默认true
+    register-with-eureka: false # 是否拉取其它服务信息，默认true
+    service-url: # EurekaServer地址，自己的地址，如果是集群，需要加上其它Server地址。
       defaultZone: http://127.0.0.1:${server.port}/eureka
 ##      defaultZone: http://peer1:10087/eureka/
   server:
-    enable-self-preservation: false # 关闭自我保护
-    eviction-interval-timer-in-ms: 5000 # 每隔 5 秒进行一次服务列表清理
+    enable-self-preservation: false # 关闭自我保护，生产环境不需要设置（默认true）
+    eviction-interval-timer-in-ms: 5000 # 每隔 5 秒进行一次服务列表清理，生产环境不需要设置（默认60s）

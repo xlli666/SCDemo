@@ -5,7 +5,7 @@ spring:
     name: api-gateway
 eureka:
   client:
-    registry-fetch-interval-seconds: 5 # 获取服务列表的周期：5s
+    registry-fetch-interval-seconds: 5 # 备份服务列表到本地缓存的周期，生产环境不需要设置（默认30s）
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
   instance:
