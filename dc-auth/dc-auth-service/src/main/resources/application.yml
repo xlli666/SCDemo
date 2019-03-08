@@ -17,6 +17,14 @@ eureka:
 feign:
   hystrix:
     enabled: true # 高版本需要开启才能处理熔断
+user-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    ConnectTimeout: 2000 # 连接超时时间(ms)
+    ReadTimeout: 2000 # 通信超时时间(ms)
+    OkToRetryOnAllOperations: true # 是否对所有操作重试
+    MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
+    MaxAutoRetries: 1 # 同一实例的重试次数
 dc:
   jwt:
     secret: hhh@123.com&xlli% # 登录校验的密钥
@@ -25,3 +33,6 @@ dc:
     expire: 30 # 过期时间,单位分钟
     cookieName: DC_TOKEN # cookie名称
     cookieMaxAge: 1800 # cookie过期时间
+logging:
+  level:
+    com.cloud.demo.auth.service.feign: DEBUG

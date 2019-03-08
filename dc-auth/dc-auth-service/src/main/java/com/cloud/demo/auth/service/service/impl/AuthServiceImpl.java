@@ -35,6 +35,10 @@ public class AuthServiceImpl implements AuthService {
                 logger.info("用户信息不存在，{}", username);
                 return null;
             }
+            if (!user.getName().equals(username)) {
+                logger.info("服务异常");
+                return null;
+            }
             // 生成token
             return JwtUtil.generateToken(
                     new UserInfo(user.getId(), user.getName()),
