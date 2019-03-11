@@ -24,21 +24,25 @@ zuul:
     - upload-service
   add-host-header: true # 允许携带请求本身的host头信息
   sensitive-headers: # 设置zuul的过滤头为空（所有的头信息全部展示）
+## 负载均衡策略需要指定服务(serviceId)才能生效
 auth-service:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
-    ConnectTimeout: 2000 # 连接超时时间(ms)
-    ReadTimeout: 2000 # 通信超时时间(ms)
-    OkToRetryOnAllOperations: true # 是否对所有操作重试
-    MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
-    MaxAutoRetries: 1 # 同一实例的重试次数
+## 负载均衡超时设置等可以不指定服务(serviceId)
+ribbon:
+  ConnectTimeout: 2500 # 连接超时时间(ms)
+  ReadTimeout: 5000 # 通信超时时间(ms)
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+## 熔断超时时长设置
 hystrix:
   command:
     default:
       execution:
         isolation:
           thread:
-            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
+            timeoutInMilliseconds: 10000 # 10000ms
 dc:
   jwt:
     pubKeyPath: D:/jwt/rsa/rsa.pub # 公钥地址
