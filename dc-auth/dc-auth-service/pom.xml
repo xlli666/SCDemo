@@ -25,6 +25,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <!-- 似乎需要添加retry依赖，Feign中Ribbon的retry才有效
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency> -->
         <!-- web启动器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

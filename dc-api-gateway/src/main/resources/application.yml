@@ -30,8 +30,8 @@ auth-service:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 ## 负载均衡超时设置等可以不指定服务(serviceId)
 ribbon:
-  ConnectTimeout: 2500 # 连接超时时间(ms)
-  ReadTimeout: 5000 # 通信超时时间(ms)
+  ConnectTimeout: 500 # 连接超时时间(ms)
+  ReadTimeout: 2000 # 通信超时时间(ms)
   OkToRetryOnAllOperations: true # 是否对所有操作重试
   MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
   MaxAutoRetries: 1 # 同一实例的重试次数
@@ -42,16 +42,16 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000 # 10000ms
+            timeoutInMilliseconds: 20000 # 20000ms
 dc:
   jwt:
     pubKeyPath: D:/jwt/rsa/rsa.pub # 公钥地址
     cookieName: DC_TOKEN # cookie名称
   filter:
-      allowPaths:
-        - /api/auth
-        - /api/search
-        - /api/user/register
-        - /api/user/check
-        - /api/user/code
-        - /api/item
+    allowPaths:
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item

@@ -36,7 +36,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 2000 # 2000ms
+            timeoutInMilliseconds: 6000 # 6000ms
 dc:
   jwt:
     secret: hhh@123.com&xlli% # 登录校验的密钥

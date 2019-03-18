@@ -30,6 +30,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <!-- 似乎需要添加retry依赖，Zuul中Ribbon的retry才有效
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency> -->
         <!-- springBoot提供的微服务检测接口，默认对外提供几个接口：/info -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
