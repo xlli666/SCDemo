@@ -20,6 +20,7 @@ zuul:
     search-service: /search/**
     user-service: /user/**
     auth-service: /auth/**
+    order-service: /order/**
   ignored-services:
     - upload-service
   add-host-header: true # 允许携带请求本身的host头信息

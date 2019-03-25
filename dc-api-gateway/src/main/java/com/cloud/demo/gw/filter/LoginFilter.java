@@ -1,6 +1,7 @@
 package com.cloud.demo.gw.filter;
 
 import com.cloud.demo.auth.util.JwtUtil;
+import com.cloud.demo.common.utils.ConstantUtils;
 import com.cloud.demo.common.utils.CookieUtils;
 import com.cloud.demo.gw.property.FilterProperties;
 import com.cloud.demo.gw.property.JwtProperties;
@@ -75,6 +76,10 @@ public class LoginFilter extends ZuulFilter {
     }
 
     private boolean isAllowPath(String requestURI) {
+        // Swagger UI 访问也作为白名单
+        if (requestURI.endsWith(ConstantUtils.SWG_SUFFIX)) {
+            return true;
+        }
         // 定义返回标记
         boolean flag = false;
         // 遍历允许访问的路径

@@ -1,0 +1,15 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: order-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳，生产环境不需要设置（默认30s）
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期，生产环境不需要设置（默认90s）
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}

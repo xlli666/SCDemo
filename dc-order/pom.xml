@@ -9,65 +9,43 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cloud.demo.common</groupId>
-    <artifactId>dc-api-gateway</artifactId>
+    <groupId>com.cloud.demo.service</groupId>
+    <artifactId>dc-order</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
-        <!--
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-zuul</artifactId>
-            <version>2.0.0.RELEASE</version>
-        </dependency>-->
-        <!-- Zuul服务网关 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-        </dependency>
         <!-- Eureka注册中心-客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!-- 似乎需要添加retry依赖，Zuul中Ribbon的retry才有效
+        <!-- Feign接口 -->
         <dependency>
-            <groupId>org.springframework.retry</groupId>
-            <artifactId>spring-retry</artifactId>
-        </dependency> -->
-        <!-- springBoot提供的微服务检测接口，默认对外提供几个接口：/info -->
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!-- web启动器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- 工具使用@ConfigurationProperties报错处理 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
+
         <!-- OpenAPI 工具 -->
-        <!-- Swagger -->
+        <!-- Swagger
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger2.version}</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger2.version}</version>
         </dependency>
-        <!-- Cookie处理 -->
+        <!-- 常量获取 -->
         <dependency>
             <groupId>com.cloud.demo.common</groupId>
             <artifactId>dc-common</artifactId>
-            <version>${dc.latest.version}</version>
-        </dependency>
-        <!-- JWT及密钥处理 -->
-        <dependency>
-            <groupId>com.cloud.demo.service</groupId>
-            <artifactId>dc-auth-common</artifactId>
             <version>${dc.latest.version}</version>
         </dependency>
     </dependencies>
