@@ -20,7 +20,7 @@ public class JwtUtil {
      * @param expireSeconds 过期时间，单位秒
      * @return 生成的token值
      */
-    public static String generateToken(UserInfo userInfo, PrivateKey privateKey, int expireSeconds) {
+    public static String generateToken(UserInfo userInfo, PrivateKey privateKey, int expireSeconds) throws Exception {
         return Jwts.builder()
                 .claim(JwtConstant.JWT_KEY_ID, userInfo.getId())
                 .claim(JwtConstant.JWT_KEY_USER_NAME, userInfo.getUserName())
@@ -54,7 +54,7 @@ public class JwtUtil {
      * @param publicKey 公钥
      * @return 解析结果
      */
-    private static Jws<Claims> parserToken(String token, PublicKey publicKey) {
+    private static Jws<Claims> parserToken(String token, PublicKey publicKey) throws Exception {
         return Jwts.parser().setSigningKey(publicKey).parseClaimsJws(token);
     }
 
@@ -77,7 +77,7 @@ public class JwtUtil {
      * @param publicKey 公钥
      * @return 用户信息
      */
-    public static UserInfo getInfoFromToken(String token, PublicKey publicKey) {
+    public static UserInfo getInfoFromToken(String token, PublicKey publicKey) throws Exception {
         Jws<Claims> claimsJws = parserToken(token, publicKey);
         Claims body = claimsJws.getBody();
         return new UserInfo(
