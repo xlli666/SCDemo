@@ -59,6 +59,11 @@ public class LoginFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         // 获取request
         HttpServletRequest request = ctx.getRequest();
+        // Swagger UI 测试放行
+        String isSwagger = request.getHeader(ConstantUtils.SWG_VALID);
+        if (!"".equals(isSwagger)) {
+            return null;
+        }
         // 获取token
         String token = CookieUtils.getCookieValue(request, jwtProp.getCookieName());
         // 校验
