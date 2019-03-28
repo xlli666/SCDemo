@@ -11,6 +11,7 @@
 
     <groupId>com.cloud.demo.service</groupId>
     <artifactId>dc-order</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
@@ -29,7 +30,42 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <!-- mybatis启动器 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- 通用Mapper启动器 -->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- 分页助手启动器 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!-- Druid数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- 工具使用@ConfigurationProperties报错处理 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- 对提交的数据(实体内部变量)校验 -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
         <!-- OpenAPI 工具 -->
         <!-- Swagger
         <dependency>
@@ -42,10 +78,16 @@
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger2.version}</version>
         </dependency>
-        <!-- 常量获取 -->
+        <!-- 常量获取，ID生成 -->
         <dependency>
             <groupId>com.cloud.demo.common</groupId>
             <artifactId>dc-common</artifactId>
+            <version>${dc.latest.version}</version>
+        </dependency>
+        <!-- JWT及密钥处理 -->
+        <dependency>
+            <groupId>com.cloud.demo.service</groupId>
+            <artifactId>dc-auth-common</artifactId>
             <version>${dc.latest.version}</version>
         </dependency>
     </dependencies>
