@@ -4,6 +4,8 @@ spring:
   application:
     name: dc-registry
 eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
   client:
     fetch-registry: false # 是否注册服务信息到EurekaServer，默认true
     register-with-eureka: false # 是否拉取其它服务信息，默认true

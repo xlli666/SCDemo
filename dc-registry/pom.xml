@@ -21,4 +21,33 @@
         </dependency>
     </dependencies>
 
+    <!-- 用于不同环境运行(spring.profiles.active=peer1/peer2/peer3/...，前面加双横线) -->
+    <profiles>
+        <profile>
+            <id>peer1</id>
+            <properties>
+                <profiles.active>peer1</profiles.active>
+                <env>peer1</env>
+            </properties>
+            <!-- 配置似乎没有效果
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation> -->
+        </profile>
+        <profile>
+            <id>peer2</id>
+            <properties>
+                <profiles.active>peer2</profiles.active>
+                <env>peer2</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>peer3</id>
+            <properties>
+                <profiles.active>peer3</profiles.active>
+                <env>peer3</env>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>

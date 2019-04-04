@@ -1,0 +1,10 @@
+server:
+  port: 10088
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    fetch-registry: true # 是否注册服务信息到EurekaServer，默认true
+    register-with-eureka: true # 是否拉取其它服务信息，默认true
+    service-url: # EurekaServer地址，自己的地址，如果是集群，需要加上其它Server地址。
+      defaultZone: http://peer1:10087/eureka/,http://peer3:10089/eureka/
